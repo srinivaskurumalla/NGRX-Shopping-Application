@@ -12,16 +12,29 @@ import { MatInputModule } from '@angular/material/input';
 import { SideBarSignal } from './shared/signals/sidebar.signal';
 import { ScreenSizeDirective } from './shared/directives/screen-size.directive';
 import { ScreenSizeSignal } from './shared/signals/screen-size.signal';
+import { CounterComponent } from './counter/counter.component';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from './states/app.state';
+import { selectCount } from './states/counter/counter.selector';
+import { ProductsComponent } from './products/products.component';
+import { ProductCardComponent } from './shared/product-card/product-card.component';
+import { CartComponent } from './cart/cart.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, HeaderComponent, FooterComponent, HeroComponent, MatButtonModule, MatSidenavModule,ScreenSizeDirective,
+  imports: [CommonModule, RouterOutlet, RouterLink, HeaderComponent, FooterComponent, HeroComponent, MatButtonModule, MatSidenavModule, ScreenSizeDirective,
     MatSidenavModule,
     MatCheckboxModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatInputModule,],
+    MatInputModule,
+    CounterComponent,
+    ProductsComponent,
+    CartComponent
+    //ProductCardComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

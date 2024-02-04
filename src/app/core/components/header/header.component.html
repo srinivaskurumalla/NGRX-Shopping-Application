@@ -11,11 +11,11 @@
       }
 
       <span class="text-xl md:text-4xl font-semibold text-gray-700 dark:text-white">
-        AMT Starter
+        Angular NGRX STORE
       </span>
 
       <div>
-        <button class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">Home</button>
+        <button routerLink="/cart" class="text-gray-600 dark:text-gray-300 hover:underline hidden sm:block">cart <span>{{(product$ | async)?.length}}</span></button>
       </div>
     </div>
   </div>

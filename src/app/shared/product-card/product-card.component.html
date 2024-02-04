@@ -1,0 +1,45 @@
+<div class="max-w-sm rounded bg-white overflow-hidden shadow-lg card">
+  <img
+    width="200"
+    class="block mx-auto"
+    [src]="product.image"
+    alt="Sunset in the mountains"
+  />
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">
+      {{ product.title.substring(0, 60) }}...
+    </div>
+    <p class="text-gray-700 text-base">
+      {{ product.description.substring(0, 100) }}...
+    </p>
+    <b class="bg-gray-300 hover:bg-gray-200 px-2 py-1">{{product.price | currency}}</b>
+    <div class="bottom-0">
+      <button (click)="addToCart(product)"
+        type="button"
+        class="mt-4 w-full rounded-sm bg-yellow-500 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline"
+      >
+        Add to cart
+      </button>
+      <button
+        type="button"
+        class="mt-4 w-full rounded-sm bg-green-500 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline"
+      >
+        View Product
+      </button>
+    </div>
+  </div>
+  <!-- <div class="px-6 pt-4 pb-2">
+    <span
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+      >#photography</span
+    >
+    <span
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+      >#travel</span
+    >
+    <span
+      class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+      >#winter</span
+    >
+  </div> -->
+</div>
