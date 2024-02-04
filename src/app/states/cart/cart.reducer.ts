@@ -32,7 +32,7 @@ export const cartReducer = createReducer(
         return {
             ...state,
             products: updatedProducts,
-            totalPrice:calculateTotalPrice(updatedProducts)
+            totalPrice: calculateTotalPrice(updatedProducts)
         };
     }),
     on(CartActions.decrementProduct, (state, { productId }) => {
@@ -43,20 +43,30 @@ export const cartReducer = createReducer(
         return {
             ...state,
             products: updatedProducts,
-            totalPrice:calculateTotalPrice(updatedProducts)
+            totalPrice: calculateTotalPrice(updatedProducts)
 
         };
     }),
+    // on(CartActions.removeItem, (state, { productId }) => {
+    //     const updatedProducts = state.products.filter(
+    //         (product) =>
+    //         product.id !== productId);
+    //     return {
+    //         ...state,
+    //          products: updatedProducts,
+    //         totalPrice: calculateTotalPrice(updatedProducts),
+    //     };
+    // }),
     on(CartActions.removeItem, (state, { productId }) => {
         const updatedProducts = state.products.filter(
-            (product) => {
+            (product) =>
                 product.id !== productId
-            })
+        )
         return {
             ...state,
             products: updatedProducts,
-            totalPrice:calculateTotalPrice(updatedProducts)
+            totalPrice: calculateTotalPrice(updatedProducts)
 
         };
-    }),
+    })
 );
